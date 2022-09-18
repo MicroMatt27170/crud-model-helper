@@ -2,6 +2,10 @@
 
 namespace MicroMatt27170\CrudModelHelper;
 
+use \Illuminate\Http\Request;
+use \Illuminate\Database\Eloquent\Model;
+use \Illuminate\Database\Eloquent\Builder;
+
 class CrudModelHelper
 {
     public Request $request;
