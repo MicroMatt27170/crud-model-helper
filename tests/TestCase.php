@@ -3,8 +3,8 @@
 namespace MicroMatt27170\CrudModelHelper\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use MicroMatt27170\CrudModelHelper\CrudModelHelperServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

@@ -11,7 +11,7 @@ class CrudModelHelper
     public Request $request;
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      */
     public function __construct(Request $request)
     {
@@ -24,23 +24,22 @@ class CrudModelHelper
     public function getLimit(): int
     {
         $limit = $this->request->input('limit', 15);
+
         return is_numeric($limit) ? $limit : 15;
     }
 
     /**
-     * @param Builder|\Illuminate\Database\Query\Builder $query
-     * @param array $searchable
-     * @param array $sortable
+     * @param  Builder|\Illuminate\Database\Query\Builder  $query
+     * @param  array  $searchable
+     * @param  array  $sortable
      * @return Builder|\Illuminate\Database\Query\Builder
      */
     public function paginator(Builder|\Illuminate\Database\Query\Builder &$query,
                               array $searchable = [],
                               array $sortable = []): Builder|\Illuminate\Database\Query\Builder
     {
-
         if ($this->request->has('search_query')) {
-
-            $query->where(function(Builder|\Illuminate\Database\Query\Builder $q) use($searchable) {
+            $query->where(function (Builder|\Illuminate\Database\Query\Builder $q) use ($searchable) {
                 $search = $this->request->input('search_query');
 
                 foreach ($searchable as $col => $optr) {
@@ -66,17 +65,17 @@ class CrudModelHelper
     }
 
     /**
-     * @param Model $model
+     * @param  Model  $model
      * @param $name
      * @return array
      */
-    public  function deleteMethod(Model $model, $name = 'La entidad'): array
+    public function deleteMethod(Model $model, $name = 'La entidad'): array
     {
         $isDel = $model->delete();
         $min = strtolower($name);
 
         return $isDel
-            ? [["success" => true, "message" => __("$name ha sido eliminada")], 200]
-            : [["success" => false, "message" => __("No se elimino $min")], 422];
+            ? [['success' => true, 'message' => __("$name ha sido eliminada")], 200]
+            : [['success' => false, 'message' => __("No se elimino $min")], 422];
     }
 }
