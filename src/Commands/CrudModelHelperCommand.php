@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace MicroMatt27170\CrudModelHelper\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class CrudModelHelperCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'crud-model-helper';
 
     public $description = 'My command';
 
