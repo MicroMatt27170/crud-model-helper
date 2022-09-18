@@ -2,9 +2,9 @@
 
 namespace MicroMatt27170\CrudModelHelper;
 
+use MicroMatt27170\CrudModelHelper\Commands\CrudModelHelperCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use MicroMatt27170\CrudModelHelper\Commands\CrudModelHelperCommand;
 
 class CrudModelHelperServiceProvider extends PackageServiceProvider
 {
@@ -17,10 +17,9 @@ class CrudModelHelperServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('crud-model-helper');
-            //->hasConfigFile()
-            //->hasViews()
-            //->hasMigration('create_crud-model-helper_table')
-            //->hasCommand(CrudModelHelperCommand::class);
-            
+        //->hasConfigFile()
+        //->hasViews()
+        //->hasMigration('create_crud-model-helper_table')
+        //->hasCommand(CrudModelHelperCommand::class);
     }
 }
